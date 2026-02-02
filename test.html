@@ -4,24 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .deleted-row { 
+            text-decoration: line-through; 
+            color: #999; 
+        }
+    </style>
     <script src="main.js"></script>
 </head>
 <body>
+    <h3>Quản lý Posts</h3>
     <div>
-        <table>
-            <thead>
-
-            </thead>
-            <tbody id="table-body">
-
-            </tbody>
-        </table>
+        <table border="1" cellpadding="10" style="margin-top: 20px; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Views</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    </tbody>
+            </table>
     </div> 
     <div>
-        <input type="text" id="id_txt"/>
-        <input type="text" id="title_txt"/>
-        <input type="text" id="view_txt"/>
-        <input type="submit" value="submit" onclick="Save()"/>
+        <!-- <input type="text" id="id_txt"/> -->
+         <h3></h3>
+        <label>Tiêu đề:</label>
+        <input type="text" id="title_txt" placeholder="Nhập tên tiêu đề"/>
+        <label>Views:</label>
+        <input type="text" id="view_txt" placeholder="Nhập số view"/>
+        <input type="submit" value="Submit" onclick="Save()"/>
     </div>   
+
+    
+    <h3>Quản lý Comments</h3>
+    <div>
+        <input type="hidden" id="comment_id_hidden">
+        <label>Nội dung:</label>
+        <input type="text" id="comment_text_txt" placeholder="Nhập nội dung comment...">
+        <label>ID Post:</label>
+        <input type="text" id="comment_postid_txt" placeholder="ID bài Post">
+        
+        <button onclick="SaveComment()">Lưu Comment</button>
+        <button onclick="ClearCommentForm()">Hủy</button>
+    </div>
+
+    <table border="1" cellpadding="10" style="margin-top: 20px; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nội dung</th>
+                <th>ID Post</th>
+                <th>Trạng thái</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody id="comment-table-body">
+            </tbody>
+    </table>
+
 </body>
 </html>
